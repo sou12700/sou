@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>キルジョイのマップを選択してください</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .map {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .map:hover {
+            transform: scale(1.05);
+        }
+        .map img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>キルジョイのマップを選択してください</h1>
+    <div class="container">
+        <div class="map" onclick="selectMap('キルジョイ_スプリット')">
+            <img src="https://img.gamewith.jp/article_tools/valorant/gacha/map_2.png" alt="スプリット">
+        </div>
+        <div class="map" onclick="selectMap('キルジョイ_ヘイヴン')">
+            <img src="https://img.gamewith.jp/article_tools/valorant/gacha/map_3.png" alt="ヘイヴン">
+        </div>
+        <div class="map" onclick="selectMap('Killjoy_BIND')">
+            <img src="https://img.gamewith.jp/article_tools/valorant/gacha/map_4.png" alt="BIND">
+        </div>
+        <div class="map" onclick="selectMap('Killjoy_ASCENT')">
+            <img src="https://img.gamewith.jp/article_tools/valorant/gacha/map_1.png" alt="ASCENT">
+        </div>
+        <div class="map" onclick="selectMap('キルジョイ_ロータス')">
+            <img src="https://img.gamewith.jp/article_tools/valorant/gacha/map_9.png" alt="ロータス">
+        </div>
+        <div class="map" onclick="selectMap('キルジョイ_ブリーズ')">
+            <img src="https://img.gamewith.jp/article_tools/valorant/gacha/map_6.png" alt="ブリーズ">
+        </div>
+        <div class="map" onclick="selectMap('キルジョイ_サンセット')">
+            <img src="https://img.gamewith.jp/img/cecfc952b79d612c6e32f20b25af9e53.png" alt="サンセット">
+        </div>
+    </div>
+    <script>
+        function selectMap(map) {
+            localStorage.setItem('selectedMap', map);
+            window.location.href = map.toLowerCase() + '.html';
+        }
+    </script>
+</body>
+</html>

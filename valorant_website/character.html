@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>キャラクター選択</title>
+    <!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>定点を確認するエージェントを選択</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                background-color: #f0f0f0;
+            }
+            .container {
+                display: grid;
+                gap: 10px;
+                padding: 20px;
+            }
+            .role {
+                margin-bottom: 30px;
+            }
+            .role h2 {
+                margin-bottom: 10px;
+                font-size: 1.5em;
+                text-align: left;
+            }
+            .character-list {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 10px;
+            }
+            .character {
+                background-color: #fff;
+                padding: 10px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+                transition: transform 0.2s;
+            }
+            .character:hover {
+                transform: scale(1.05);
+            }
+            .character img {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+            .role-button {
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>定点を確認するエージェントを選択</h1>
+        <div class="container">
+            <!-- 役職選択ボタン -->
+            <div class="role-button">
+                <button onclick="scrollToRole('デュエリスト')">デュエリスト</button>
+                <button onclick="scrollToRole('センチネル')">センチネル</button>
+                <button onclick="scrollToRole('イニシエーター')">イニシエーター</button>
+                <button onclick="scrollToRole('コントローラー')">コントローラー</button>
+            </div>
+        <!-- デュエリスト -->
+        <div class="role" id="デュエリスト">
+            <h2>デュエリスト</h2>
+            <div class="character-list">
+                <div class="character" onclick="selectCharacter('ジェット')">
+                    <img src="https://img.gamewith.jp/img/04c0a7df14c4fbaf18404a28f3447d67.png" alt="ジェット">
+                    <p>ジェット</p>
+                </div>
+                <div class="character" onclick="selectCharacter('レイズ')">
+                    <img src="https://img.gamewith.jp/img/1d10bd03c9bd963120df2961e51b3ca7.png" alt="レイズ">
+                    <p>レイズ</p>
+                </div>
+                <div class="character" onclick="selectCharacter('フェニックス')">
+                    <img src="https://img.gamewith.jp/img/0f64cd8bbf4802a7c431d37f0965d082.png" alt="フェニックス">
+                    <p>フェニックス</p>
+                </div>
+                <div class="character" onclick="selectCharacter('レイナ')">
+                    <img src="https://img.gamewith.jp/img/7305289a1c8ce6e38c41ceb26eb6f227.png" alt="レイナ">
+                    <p>レイナ</p>
+                </div>
+                <div class="character" onclick="selectCharacter('ヨル')">
+                    <img src="https://img.gamewith.jp/img/1ec9e3e964bcede13ea84870a2d88ebc.png" alt="ヨル">
+                    <p>ヨル</p>
+                </div>
+                <div class="character" onclick="selectCharacter('ネオン')">
+                    <img src="https://img.gamewith.jp/img/a5d4141706d460ef46d17715bf03f9aa.png" alt="ネオン">
+                    <p>ネオン</p>
+                </div>
+            </div>
+        </div>
+        <!-- センチネル -->
+        <div class="role" id="センチネル">
+            <h2>センチネル</h2>
+            <div class="character-list">
+                <div class="character" onclick="selectCharacter('セージ')">
+                    <img src="https://img.gamewith.jp/img/5371ccabea4eb08c8bceab9261281cce.png" alt="セージ">
+                    <p>セージ</p>
+                </div>
+                <div class="character" onclick="selectCharacter('サイファー')">
+                    <img src="https://img.gamewith.jp/img/eab1f61df375f9a90974f53b5acea51f.png" alt="サイファー">
+                    <p>サイファー</p>
+                </div>
+                <div class="character" onclick="selectCharacter('Killjoy')">
+                    <img src="https://img.gamewith.jp/img/5012e933327b1a343877c47403724699.png" alt="Killjoy">
+                    <p>キルジョイ</p>
+                </div>
+                <div class="character" onclick="selectCharacter('チェンバー')">
+                    <img src="https://img.gamewith.jp/img/3523748aadc460ec23fbea522a46f3fa.png" alt="チェンバー">
+                    <p>チェンバー</p>
+                </div>
+                <div class="character" onclick="selectCharacter('デッドロック')">
+                    <img src="https://img.gamewith.jp/img/59b4e2a567aadb53c20ee7ed23ab4f0e.png" alt="デッドロック">
+                    <p>デッドロック</p>
+                </div>
+            </div>
+        </div>
+        <!-- イニシエーター -->
+        <div class="role" id="イニシエーター">
+            <h2>イニシエーター</h2>
+            <div class="character-list">
+                <div class="character" onclick="selectCharacter('ブリーチ')">
+                    <img src="https://img.gamewith.jp/img/726eade668ea6ca799c73af0cc297b51.png" alt="ブリーチ">
+                    <p>ブリーチ</p>
+                </div>
+                <div class="character" onclick="selectCharacter('ソーヴァ')">
+                    <img src="https://img.gamewith.jp/img/b8906d5055564d6918ab79550d76f389.png" alt="ソーヴァ">
+                    <p>ソーヴァ</p>
+                </div>
+                <div class="character" onclick="selectCharacter('スカイ')">
+                    <img src="https://img.gamewith.jp/img/5d0783d0b65e63090e2aa27662bf86ec.png" alt="スカイ">
+                    <p>スカイ</p>
+                </div>
+                <div class="character" onclick="selectCharacter('KAY/O')">
+                    <img src="https://img.gamewith.jp/img/489189b7a569e338ec0cb46e121035eb.png" alt="KAY/O">
+                    <p>KAY/O</p>
+                </div>
+                <div class="character" onclick="selectCharacter('フェイド')">
+                    <img src="https://img.gamewith.jp/img/d6b6bc9e89b8af1497dc984f54ef769c.png" alt="フェイド">
+                    <p>フェイド</p>
+                </div>
+                <div class="character" onclick="selectCharacter('ゲッコー')">
+                    <img src="https://img.gamewith.jp/img/30d0310ac468df584ccdbb51de37663b.png" alt="ゲッコー">
+                    <p>ゲッコー</p>
+                </div>
+            </div>
+        </div>
+        <!-- コントローラー -->
+        <div class="role" id="コントローラー">
+            <h2>コントローラー</h2>
+            <div class="character-list">
+                <div class="character" onclick="selectCharacter('オーメン')">
+                    <img src="https://img.gamewith.jp/img/52c3c37a27c5b4754aea910da6a410d2.png" alt="オーメン">
+                    <p>オーメン</p>
+                </div>
+                <div class="character" onclick="selectCharacter('ブリムストーン')">
+                    <img src="https://img.gamewith.jp/img/8f68d97923074559cd56db34e091d9ec.png" alt="ブリムストーン">
+                    <p>ブリムストーン</p>
+                </div>
+                <div class="character" onclick="selectCharacter('ヴァイパー')">
+                    <img src="https://img.gamewith.jp/img/6728d92bf3015bd8a42a8ae201e38fca.png" alt="ヴァイパー">
+                    <p>ヴァイパー</p>
+                </div>
+                <div class="character" onclick="selectCharacter('アストラ')">
+                    <img src="https://img.gamewith.jp/img/b948b4770e9db9ad1bdd2779729fa63b.png" alt="アストラ">
+                    <p>アストラ</p>
+                </div>
+                <div class="character" onclick="selectCharacter('ハーバー')">
+                    <img src="https://img.gamewith.jp/img/027a2161e7fe6d1e4b144a616832ab0f.png" alt="ハーバー">
+                    <p>ハーバー</p>
+                </div>
+                <div class="character" onclick="selectCharacter('クローヴ')">
+                    <img src="https://img.gamewith.jp/article/thumbnail/rectangle/442352.png?date=1711295776" alt="クローヴ">
+                    <p>クローヴ</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function selectCharacter(character) {
+            localStorage.setItem('selectedCharacter', character);
+            // キャラクターごとに異なるマップ選択ページに移動する
+            window.location.href = character.toLowerCase() + '_maps.html';
+        }
+
+        function scrollToRole(role) {
+            const roleElement = document.getElementById(role);
+            if (roleElement) {
+                roleElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }   
+
+    </script>
+    </body>
+</head>
+</html>
